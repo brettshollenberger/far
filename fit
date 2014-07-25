@@ -1,0 +1,27 @@
+#! /usr/bin/env ruby
+
+require "pry"
+require "optparse"
+
+@options = {:run => false, :please => false}
+OptionParser.new do |opts|
+  opts.on("-r", "--[no-]run", "Run? Won't actually run unless you say please") do |r|
+    @options[:run] = r
+  end
+
+  opts.on("-p", "--[no-]please", "Please. You better be nice.") do |p|
+    @options[:please] = p
+  end
+end.parse!
+
+substitution = ARGV[0]
+match        = ARGV[0].split('/')[1]
+
+def run
+  return "-i ''" if @options[:run] && @options[:please]
+  return ""
+end
+
+`ack #{match} -l | xargs sed #{run} -e #{substitution}`.each_line do |line|
+  puts line
+end

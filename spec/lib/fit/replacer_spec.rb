@@ -8,4 +8,8 @@ describe Fit::Replacer do
   it "accepts an Vim-like substitution argument" do
     expect(@replacer.substitution).to eq('s/cats/dogs')
   end
+
+  it "parses the 'find' argument" do
+    expect(@replacer.find).to eq('cats')
+  end
 end

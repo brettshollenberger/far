@@ -1,9 +1,34 @@
+#! /usr/bin/env ruby
+
 require "pry"
 require "optparse"
 require "differ"
 
 module Fit
+  @options = {:run => false, :please => false}
+
+  OptionParser.new do |opts|
+    opts.on("-r", "--[no-]run", "Run? Won't actually run unless you say please") do |r|
+      @options[:run] = r
+    end
+
+    opts.on("-p", "--[no-]please", "Please. You better be nice.") do |p|
+      @options[:please] = p
+    end
+
+    opts.on("--ignore-dir", "Directory to ignore. Uses Ack options") do |d|
+      @options[:ignore_dir] = d
+    end
+
+    opts.on("--ignore-file", "File(s) to ignore. Uses Ack options") do |d|
+      @options[:ignore_file] = d
+    end
+  end
+
+  puts @options
+  puts @others
 end
+
 
 # module Differ
 #   class << self
@@ -51,17 +76,6 @@ end
 #     end
 #   end
 # end
-
-# @options = {:run => false, :please => false}
-# OptionParser.new do |opts|
-#   opts.on("-r", "--[no-]run", "Run? Won't actually run unless you say please") do |r|
-#     @options[:run] = r
-#   end
-
-#   opts.on("-p", "--[no-]please", "Please. You better be nice.") do |p|
-#     @options[:please] = p
-#   end
-# end.parse!
 
 # substitution = ARGV[0]
 # match        = ARGV[0].split('/')[1]

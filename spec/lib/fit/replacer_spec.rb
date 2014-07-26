@@ -2,8 +2,8 @@ require "spec_helper"
 
 describe Fit::Replacer do
   before(:each) do
-    @replacer  = Fit::Replacer.new 's/cats/dogs',                    '--ignore-dir=spec'
-    @replacer2 = Fit::Replacer.new 's/Cool\:\:Guy/Cool\:\:Dude',     '--ignore-dir=spec'
+    @replacer  = Fit::Replacer.new 's/cats/dogs',                {:ignore_dir => "spec"}
+    @replacer2 = Fit::Replacer.new 's/Cool\:\:Guy/Cool\:\:Dude', {:ignore_dir => "spec"}
   end
 
   it "accepts an Vim-like substitution argument" do

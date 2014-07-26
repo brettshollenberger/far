@@ -49,7 +49,7 @@ module Fit
     end
 
     def dry_run?
-      !@options[:please].value.nil? || !@options[:replace].value.nil?
+      !@options[:please].value || !@options[:replace].value
     end
 
     def generate_change_report
@@ -57,7 +57,7 @@ module Fit
     end
 
     def change_report
-      @change_report ||= ChangeReport.new(files).report
+      @change_report ||= ChangeReport.new(files)
     end
 
     def replace_file(file)

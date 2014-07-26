@@ -8,7 +8,7 @@ describe Fit::Replacer do
                                                                   :replace    => true}
   end
 
-  it "accepts an Vim-like substitution argument" do
+  it "accepts a Vim-like substitution argument" do
     expect(@replacer.substitution).to  eq('s/cats/dogs/')
     expect(@replacer2.substitution).to eq('s/Cool\:\:Guy/Cool\:\:Dude/')
   end

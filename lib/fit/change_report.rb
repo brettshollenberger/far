@@ -1,22 +1,20 @@
 module Fit
-  class ChangeReport
+  class ChangeReport < Hash
     attr_accessor :report
 
     def initialize(files)
-      @files  = files
-      @report = make
+      files.each { |file| self[file.name] = file.changes }
     end
 
-    def make
-      @files.inject({}) do |change_report, file|
-        change_report[file.name] = file.changes
-        change_report
+    def print
+      each do |file, changes|
+        changes.each do |change|
+          puts "\033[32m#{file}\033[0m #{change[:line_number]}:"
+          puts change[:original]
+          puts change[:changed]
+          puts
+        end
       end
-    end
-
-  private
-    def lines_to_change_cmd(file)
-      "ack #{@find} #{@file} /dev/null"
     end
   end
 end

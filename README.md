@@ -6,7 +6,6 @@ Global command line find and replace. Fit will recursively fix everything in you
 ```
 fit 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
-
 #### To actually run, pass the "please" and "run" options
 ```
 fit --please --run 's/Fun\:\:Stuff/Cool\:\:Things/'

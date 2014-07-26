@@ -1,0 +1,12 @@
+{
+  cool_author: {
+    name: "Zach MacHardy",
+    age: "debatable",
+    hair: "coiffed"
+  } 
+  guy_author: {
+    name: "Brett Cassette",
+    age: "unbelievable",
+    fun: "of course"
+  }
+}

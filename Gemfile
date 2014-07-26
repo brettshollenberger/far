@@ -8,6 +8,7 @@ group :development do
   gem "simplecov", ">= 0"
   gem "rspec"
   gem "guard-rspec"
+  gem "terminal-notifier-guard"
 end
 
 gem "differ"

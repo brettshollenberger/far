@@ -1,27 +1,27 @@
-# fit
+# far
 
-Project-wide find and replace. Fit will recursively fix your current directory.
+Project-wide find and replace. Far will recursively fix your current directory.
 
 #### Dry run the output of a replace
 ```
-fit 's/Fun\:\:Stuff/Cool\:\:Things/'
+far 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
 #### To actually run, pass the "please" and "run" options
 ```
-fit --please --run 's/Fun\:\:Stuff/Cool\:\:Things/'
-fit -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
+far --please --run 's/Fun\:\:Stuff/Cool\:\:Things/'
+far -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
 #### Ignore directory
 ```
-fit --ignore-dir=spec -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
+far --ignore-dir=spec -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
 
 #### Ignore file
 ```
-fit --ignore-file=cats.rb -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
+far --ignore-file=cats.rb -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
 
-## Contributing to fit
+## Contributing to far
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.

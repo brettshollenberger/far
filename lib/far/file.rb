@@ -1,4 +1,4 @@
-module Fit
+module Far
   class File
     attr_accessor :name, :colorized_name, :changes, :find, :parts, :original_version, :changed_version
 

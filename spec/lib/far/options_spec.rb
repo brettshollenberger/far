@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe Fit::Options do
+describe Far::Options do
   before(:each) do
-    @options  = Fit::Options.new({:ignore_dir => "spec", :c => true})
+    @options  = Far::Options.new({:ignore_dir => "spec", :c => true})
   end
 
   it "parses the options" do

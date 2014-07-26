@@ -1,4 +1,4 @@
-module Fit
+module Far
   class Option
     attr_accessor :key, :value
 
@@ -11,8 +11,8 @@ module Fit
       "#{prefix}#{negator}#{@key.gsub(/\_/) { |k| "-" }}#{equals}#{@value unless boolean?}"
     end
 
-    def fit_option?
-      Options.fit_options.include? @key.to_sym
+    def far_option?
+      Options.far_options.include? @key.to_sym
     end
 
     def flag?

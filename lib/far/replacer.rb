@@ -1,4 +1,4 @@
-module Fit
+module Far
   class Replacer
     attr_reader   :substitution
     attr_accessor :file_list, :options, :change_report
@@ -98,7 +98,7 @@ module Fit
     end
 
     def tmp_file
-      "./fit.tmp"
+      "./far.tmp"
     end
   end
 end

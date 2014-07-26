@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "fit"
-  gem.homepage = "http://github.com/brettshollenberger/fit"
+  gem.name = "far"
+  gem.homepage = "http://github.com/brettshollenberger/far"
   gem.license = "MIT"
   gem.summary = %Q{Project-wide find and replace.}
   gem.description = %Q{Recursively find and replace in your current directory.}
@@ -45,7 +45,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "fit #{version}"
+  rdoc.title = "far #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

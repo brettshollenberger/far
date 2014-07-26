@@ -1,0 +1,2 @@
+module Far
+end

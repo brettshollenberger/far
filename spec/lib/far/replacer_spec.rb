@@ -1,9 +1,9 @@
 require "spec_helper"
 
-describe Fit::Replacer do
+describe Far::Replacer do
   before(:each) do
-    @replacer  = Fit::Replacer.new 's/cats/dogs',                {:ignore_dir => "spec"}
-    @replacer2 = Fit::Replacer.new 's/Cool\:\:Guy/Cool\:\:Dude', {:ignore_dir => "spec",
+    @replacer  = Far::Replacer.new 's/cats/dogs',                {:ignore_dir => "spec"}
+    @replacer2 = Far::Replacer.new 's/Cool\:\:Guy/Cool\:\:Dude', {:ignore_dir => "spec",
                                                                   :please     => true,
                                                                   :replace    => true}
   end

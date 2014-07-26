@@ -1,4 +1,4 @@
-module Fit
+module Far
   class ChangeReport < Hash
     attr_accessor :report
 

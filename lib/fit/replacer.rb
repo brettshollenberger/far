@@ -14,5 +14,9 @@ module Fit
     def find
       @substitution.split('/')[1]
     end
+
+    def replace
+      @substitution.split('/')[2]
+    end
   end
 end

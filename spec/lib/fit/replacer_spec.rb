@@ -18,4 +18,10 @@ describe Fit::Replacer do
     expect(@replacer2.find).to eq('Cool\:\:Guy')
     expect(@replacer3.find).to eq('Dr\.\(Escape\)[LOVE]*')
   end
+
+  it "parses the 'replace' argument" do
+    expect(@replacer.replace).to  eq('dogs')
+    expect(@replacer2.replace).to eq('Cool\:\:Dude')
+    expect(@replacer3.replace).to eq('weirdo')
+  end
 end

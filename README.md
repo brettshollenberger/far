@@ -11,7 +11,6 @@ fit 's/Fun\:\:Stuff/Cool\:\:Things/'
 fit --please --run 's/Fun\:\:Stuff/Cool\:\:Things/'
 fit -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
-
 #### Ignore directory
 ```
 fit --ignore-dir=spec -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
@@ -36,4 +35,3 @@ fit --ignore-file=cats.rb -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
 
 Copyright (c) 2014 Brett Shollenberger & Zach MacHardy. See LICENSE.txt for
 further details.
-

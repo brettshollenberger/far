@@ -1,9 +1,14 @@
 module Fit
   class Replacer
-    attr_accessor :substitution
+    attr_reader :substitution
 
     def initialize(substitution)
-      @substitution = substitution
+      self.substitution = substitution
+    end
+
+    def substitution=(value)
+      value += "/" unless value[-1] == "/"
+      @substitution = value
     end
 
     def find

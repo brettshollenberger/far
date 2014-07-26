@@ -1,13 +1,14 @@
 module Fit
   class File
-    attr_accessor :name, :changes, :find, :parts
+    attr_accessor :name, :colorized_name, :changes, :find, :parts, :original_version, :changed_version
 
     def initialize(name, find)
+      @name  = name
       @parts ||= `ack #{find} #{name} /dev/null`.split("\n")
     end
 
-    def name
-      @name ||= @parts[0]
+    def colorized_name
+      @colorized_name ||= @parts[0]
     end
 
     def changes
@@ -15,7 +16,7 @@ module Fit
         parts       = change.split(/\:/)
         line_number = parts[0]
         replacement = parts[1..-1].join(":")
-        [line_number, replacement]
+        {line_number: line_number, original: replacement}
       end
     end
 

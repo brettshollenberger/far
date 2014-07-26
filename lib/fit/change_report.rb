@@ -2,15 +2,13 @@ module Fit
   class ChangeReport
     attr_accessor :report
 
-    def initialize(file_list, find)
-      @file_list = file_list
-      @find      = find
-      @report    = make
+    def initialize(files)
+      @files  = files
+      @report = make
     end
 
     def make
-      @file_list.inject({}) do |change_report, file|
-        file = File.new file, @find
+      @files.inject({}) do |change_report, file|
         change_report[file.name] = file.changes
         change_report
       end

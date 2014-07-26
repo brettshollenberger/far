@@ -8,11 +8,11 @@ module Fit
   @options = {:run => false, :please => false}
 
   OptionParser.new do |opts|
-    opts.on("-r", "--[no-]run", "Run? Won't actually run unless you say please") do |r|
-      @options[:run] = r
+    opts.on("-r", "--[no-]replace", "Replace. Not a dry run. Must be combined with --please") do |r|
+      @options[:replace] = r
     end
 
-    opts.on("-p", "--[no-]please", "Please. You better be nice.") do |p|
+    opts.on("-p", "--[no-]please", "Manners are important.") do |p|
       @options[:please] = p
     end
 
@@ -24,9 +24,6 @@ module Fit
       @options[:ignore_file] = d
     end
   end
-
-  puts @options
-  puts @others
 end
 
 

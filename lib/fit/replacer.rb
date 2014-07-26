@@ -25,6 +25,10 @@ module Fit
       @file_list ||= `#{file_list_cmd}`.split(" ")
     end
 
+    def dry_run?
+      !@options[:please] || !@options[:replace]
+    end
+
   private
     def file_list_cmd
       "ack #{find} -l #{options.to_command_line}"

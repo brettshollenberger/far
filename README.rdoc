@@ -1,6 +1,26 @@
 = fit
 
-Description goes here.
+Project-wide find and replace. Fit will recursively fix your current directory.
+
+#### Dry run the output of a replace
+```
+fit 's/Fun\:\:Stuff/Cool\:\:Things/'
+```
+#### To actually run, pass the "please" and "run" options
+```
+fit --please --run 's/Fun\:\:Stuff/Cool\:\:Things/'
+fit -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
+```
+
+#### Ignore directory
+```
+fit --ignore-dir=spec -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
+```
+
+#### Ignore file
+```
+fit --ignore-file=cats.rb -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
+```
 
 == Contributing to fit
  

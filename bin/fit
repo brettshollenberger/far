@@ -35,4 +35,4 @@ end.parse!
 @replacer.diff
 @replacer.change_report.print
 
-`rm ../fit.tmp 2> /dev/null`
+`rm fit.tmp 2> /dev/null`

@@ -6,9 +6,9 @@ Project-wide find and replace. Far will recursively fix your current directory.
 ```
 far 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
-#### To actually run, pass the "please" and "run" options
+#### To actually run, pass the "please" and "replace" options
 ```
-far --please --run 's/Fun\:\:Stuff/Cool\:\:Things/'
+far --please --replace 's/Fun\:\:Stuff/Cool\:\:Things/'
 far -pr 's/Fun\:\:Stuff/Cool\:\:Things/'
 ```
 #### Ignore directory

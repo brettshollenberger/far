@@ -1,7 +1,7 @@
 module Fit
   class Replacer
     attr_reader   :substitution
-    attr_accessor :file_list, :options
+    attr_accessor :file_list, :options, :change_report
 
     def initialize(substitution, options)
       self.substitution = substitution
@@ -29,9 +29,17 @@ module Fit
       !@options[:please] || !@options[:replace]
     end
 
+    def change_report
+      @change_report ||= ChangeReport.new(file_list, find).report
+    end
+
   private
     def file_list_cmd
       "ack #{find} -l #{@options.to_command_line}"
+    end
+
+    def lines_to_change_cmd(file)
+      "ack #{find} #{file} /dev/null"
     end
   end
 end

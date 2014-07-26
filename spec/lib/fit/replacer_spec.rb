@@ -3,7 +3,9 @@ require "spec_helper"
 describe Fit::Replacer do
   before(:each) do
     @replacer  = Fit::Replacer.new 's/cats/dogs',                {:ignore_dir => "spec"}
-    @replacer2 = Fit::Replacer.new 's/Cool\:\:Guy/Cool\:\:Dude', {:ignore_dir => "spec"}
+    @replacer2 = Fit::Replacer.new 's/Cool\:\:Guy/Cool\:\:Dude', {:ignore_dir => "spec",
+                                                                  :please     => true,
+                                                                  :replace    => true}
   end
 
   it "accepts an Vim-like substitution argument" do
@@ -24,5 +26,15 @@ describe Fit::Replacer do
   it "gets file list" do
     expect(@replacer.file_list).to  eq ["example_files/cats.tirade"]
     expect(@replacer2.file_list).to eq ["example_files/everyone.rb", "example_files/people.rb"]
+  end
+
+  it "gets file list" do
+    expect(@replacer.file_list).to  eq ["example_files/cats.tirade"]
+    expect(@replacer2.file_list).to eq ["example_files/everyone.rb", "example_files/people.rb"]
+  end
+
+  it "is dry run if --please --replace not passed" do
+    expect(@replacer.dry_run?).to  be true
+    expect(@replacer2.dry_run?).to be false
   end
 end

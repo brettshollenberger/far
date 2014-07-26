@@ -11,6 +11,10 @@ module Fit
       "#{prefix}#{negator}#{@key.gsub(/\_/) { |k| "-" }}#{equals}#{@value unless boolean?}"
     end
 
+    def fit_option?
+      Options.fit_options.include? @key.to_sym
+    end
+
     def flag?
       @key.length > 1
     end
@@ -37,3 +41,10 @@ module Fit
     end
   end
 end
+
+class Hash
+  def hmap(&block)
+    Hash[self.map {|k, v| block.call(k,v) }]
+  end
+end
+

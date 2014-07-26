@@ -31,7 +31,7 @@ module Fit
 
   private
     def file_list_cmd
-      "ack #{find} -l #{options.to_command_line}"
+      "ack #{find} -l #{@options.to_command_line}"
     end
   end
 end

@@ -3,12 +3,7 @@
 require "optparse"
 require "differ"
 
-require_relative "../lib/far/change_report"
-require_relative "../lib/far/differ"
-require_relative "../lib/far/file"
-require_relative "../lib/far/option"
-require_relative "../lib/far/options"
-require_relative "../lib/far/replacer"
+Dir[File.expand_path("./lib/**/*.rb")].each { |f| require f }
 
 @options = {:replace => false, :please => false}
 
